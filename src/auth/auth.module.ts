@@ -6,14 +6,14 @@ import { APP_FILTER } from '@nestjs/core';
 import { AuthExceptionFilter } from './auth.exception-filter';
 
 @Module({
-    controllers: [AuthController],
-    providers: [
-        AuthService,
-        JwtStrategy,
-        {
-            provide: APP_FILTER,
-            useClass: AuthExceptionFilter,
-        } as ClassProvider
-    ]
+  controllers: [AuthController],
+  providers: [
+    AuthService,
+    JwtStrategy,
+    {
+      provide: APP_FILTER,
+      useClass: AuthExceptionFilter,
+    } as ClassProvider,
+  ],
 } as ModuleMetadata)
 export class AuthModule {}

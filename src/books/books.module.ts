@@ -4,10 +4,12 @@ import { BooksController } from './books.controller';
 import { IAuthModuleOptions, PassportModule } from '@nestjs/passport';
 
 @Module({
-  imports: [PassportModule.register({
-    defaultStrategy: 'jwt'
-  } as IAuthModuleOptions)],
+  imports: [
+    PassportModule.register({
+      defaultStrategy: 'jwt',
+    } as IAuthModuleOptions),
+  ],
   controllers: [BooksController],
-  providers: [BooksService]
+  providers: [BooksService],
 } as ModuleMetadata)
 export class BooksModule {}

@@ -7,20 +7,18 @@ import { ScanResponse } from 'nestjs-dynamoose';
 
 @Injectable()
 export class BooksService {
-  
   async create({
-    title, 
-    author, 
-    publishedDate, 
-    description
+    title,
+    author,
+    publishedDate,
+    description,
   }: CreateBookDto): Promise<Book> {
-
     return await BookModel.create({
       id: v4(),
       title,
       author,
       publishedDate: new Date(publishedDate),
-      description
+      description,
     } as Book);
   }
 
@@ -30,26 +28,25 @@ export class BooksService {
 
   async findOne(id: string): Promise<Book> {
     const found: Book = await BookModel.get(id);
-    if (! found) {
+    if (!found) {
       throw new NotFoundException();
     }
     return found;
   }
 
-  async update(id: string, {
-    title,
-    author,
-    publishedDate,
-    description
-  }: UpdateBookDto): Promise<Book> {
-
+  async update(
+    id: string,
+    { title, author, publishedDate, description }: UpdateBookDto,
+  ): Promise<Book> {
     const found: Book = await this.findOne(id);
 
     return await BookModel.update(id, {
       title: title ?? found.title,
       author: author ?? found.author,
-      publishedDate: publishedDate ? new Date(publishedDate) : found.publishedDate,
-      description: description ?? found.description
+      publishedDate: publishedDate
+        ? new Date(publishedDate)
+        : found.publishedDate,
+      description: description ?? found.description,
     } as Book);
   }
 

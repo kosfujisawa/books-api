@@ -7,12 +7,16 @@ describe('AppController (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
-    app = await (await Test.createTestingModule({
-      imports: [AppModule]
-    } as ModuleMetadata).compile()).createNestApplication().init();
+    app = await (
+      await Test.createTestingModule({
+        imports: [AppModule],
+      } as ModuleMetadata).compile()
+    )
+      .createNestApplication()
+      .init();
   });
 
   it('/ (GET)', () => {
-    return request(app.getHttpServer()).get('/').expect(404)
+    return request(app.getHttpServer()).get('/').expect(404);
   });
 });

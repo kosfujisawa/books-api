@@ -1,10 +1,20 @@
-import { Controller, Get, Post, Body, Param, Delete, Put, ParseUUIDPipe, UseGuards } from '@nestjs/common';
 import { BooksService } from './books.service';
 import { CreateBookDto } from './dto/create-book.dto';
 import { UpdateBookDto } from './dto/update-book.dto';
 import { ScanResponse } from 'nestjs-dynamoose';
 import { Book } from './book.model';
 import { AuthGuard } from '@nestjs/passport';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  Put,
+  ParseUUIDPipe,
+  UseGuards,
+} from '@nestjs/common';
 
 @Controller('books')
 @UseGuards(AuthGuard())
@@ -29,7 +39,7 @@ export class BooksController {
   @Put(':id')
   async update(
     @Param('id', ParseUUIDPipe) id: string,
-    @Body() updateBookDto: UpdateBookDto
+    @Body() updateBookDto: UpdateBookDto,
   ): Promise<Book> {
     return await this.booksService.update(id, updateBookDto);
   }

@@ -7,14 +7,14 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     DynamooseModule.forRoot({
       aws: {
-        accessKeyId: 'dummy', 
-        secretAccessKey: 'dummy', 
-        region: 'ap-southeast-2'
+        accessKeyId: 'dummy',
+        secretAccessKey: 'dummy',
+        region: 'ap-southeast-2',
       } as DynamooseModuleOptions['aws'],
-      local: true
+      local: true,
     } as DynamooseModuleOptions),
     AuthModule,
-    BooksModule
-  ]
+    BooksModule,
+  ],
 } as ModuleMetadata)
 export class AppModule {}
