@@ -1,8 +1,8 @@
 import { AuthService } from './auth.service';
-import { ConfirmSignUpCommandOutput, InitiateAuthCommandOutput, SignUpCommandOutput } from '@aws-sdk/client-cognito-identity-provider';
 import { SignUpDto } from './dto/SignUp.dto';
 import { ConfirmSignUpDto } from './dto/confirm-signup.dto';
 import { SignInDto } from './dto/signin.dto';
+import { ConfirmSignUpCommandOutput, InitiateAuthCommandOutput, SignUpCommandOutput } from '@aws-sdk/client-cognito-identity-provider';
 export declare class AuthController {
     readonly cognitoService: AuthService;
     constructor(cognitoService: AuthService);

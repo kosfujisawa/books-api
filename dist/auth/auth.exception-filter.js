@@ -11,7 +11,11 @@ const common_1 = require("@nestjs/common");
 let AuthExceptionFilter = class AuthExceptionFilter {
     catch(exception, host) {
         const statusCode = 403;
-        host.switchToHttp().getResponse().status(statusCode).json({
+        host
+            .switchToHttp()
+            .getResponse()
+            .status(statusCode)
+            .json({
             statusCode,
             message: exception.message,
         });

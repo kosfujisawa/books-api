@@ -23,8 +23,8 @@ let JwtStrategy = class JwtStrategy extends (0, passport_1.PassportStrategy)(pas
                 cache: true,
                 rateLimit: true,
                 jwksRequestsPerMinute: 5,
-                jwksUri: "https://cognito-idp.ap-southeast-2.amazonaws.com/ap-southeast-2_cBcKFXV6s/.well-known/jwks.json"
-            })
+                jwksUri: 'https://cognito-idp.ap-southeast-2.amazonaws.com/ap-southeast-2_cBcKFXV6s/.well-known/jwks.json',
+            }),
         });
     }
     async validate() {

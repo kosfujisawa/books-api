@@ -11,13 +11,13 @@ const common_1 = require("@nestjs/common");
 const book_model_1 = require("./book.model");
 const uuid_1 = require("uuid");
 let BooksService = class BooksService {
-    async create({ title, author, publishedDate, description }) {
+    async create({ title, author, publishedDate, description, }) {
         return await book_model_1.BookModel.create({
             id: (0, uuid_1.v4)(),
             title,
             author,
             publishedDate: new Date(publishedDate),
-            description
+            description,
         });
     }
     async findAll() {
@@ -35,8 +35,10 @@ let BooksService = class BooksService {
         return await book_model_1.BookModel.update(id, {
             title: title ?? found.title,
             author: author ?? found.author,
-            publishedDate: publishedDate ? new Date(publishedDate) : found.publishedDate,
-            description: description ?? found.description
+            publishedDate: publishedDate
+                ? new Date(publishedDate)
+                : found.publishedDate,
+            description: description ?? found.description,
         });
     }
     async delete(id) {

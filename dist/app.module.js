@@ -21,13 +21,13 @@ exports.AppModule = AppModule = __decorate([
                 aws: {
                     accessKeyId: 'dummy',
                     secretAccessKey: 'dummy',
-                    region: 'ap-southeast-2'
+                    region: 'ap-southeast-2',
                 },
-                local: true
+                local: true,
             }),
             auth_module_1.AuthModule,
-            books_module_1.BooksModule
-        ]
+            books_module_1.BooksModule,
+        ],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

@@ -16,11 +16,13 @@ let BooksModule = class BooksModule {
 exports.BooksModule = BooksModule;
 exports.BooksModule = BooksModule = __decorate([
     (0, common_1.Module)({
-        imports: [passport_1.PassportModule.register({
-                defaultStrategy: 'jwt'
-            })],
+        imports: [
+            passport_1.PassportModule.register({
+                defaultStrategy: 'jwt',
+            }),
+        ],
         controllers: [books_controller_1.BooksController],
-        providers: [books_service_1.BooksService]
+        providers: [books_service_1.BooksService],
     })
 ], BooksModule);
 //# sourceMappingURL=books.module.js.map

@@ -25,8 +25,8 @@ exports.AuthModule = AuthModule = __decorate([
             {
                 provide: core_1.APP_FILTER,
                 useClass: auth_exception_filter_1.AuthExceptionFilter,
-            }
-        ]
+            },
+        ],
     })
 ], AuthModule);
 //# sourceMappingURL=auth.module.js.map
