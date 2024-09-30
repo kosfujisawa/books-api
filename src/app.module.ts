@@ -5,6 +5,8 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
+    AuthModule,
+    BooksModule,
     DynamooseModule.forRoot({
       aws: {
         accessKeyId: 'dummy',
@@ -13,8 +15,6 @@ import { AuthModule } from './auth/auth.module';
       } as DynamooseModuleOptions['aws'],
       local: true,
     } as DynamooseModuleOptions),
-    AuthModule,
-    BooksModule,
   ],
 } as ModuleMetadata)
 export class AppModule {}

@@ -17,6 +17,8 @@ exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            auth_module_1.AuthModule,
+            books_module_1.BooksModule,
             nestjs_dynamoose_1.DynamooseModule.forRoot({
                 aws: {
                     accessKeyId: 'dummy',
@@ -25,8 +27,6 @@ exports.AppModule = AppModule = __decorate([
                 },
                 local: true,
             }),
-            auth_module_1.AuthModule,
-            books_module_1.BooksModule,
         ],
     })
 ], AppModule);
