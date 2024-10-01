@@ -16,7 +16,6 @@ exports.BooksController = void 0;
 const books_service_1 = require("./books.service");
 const create_book_dto_1 = require("./dto/create-book.dto");
 const update_book_dto_1 = require("./dto/update-book.dto");
-const passport_1 = require("@nestjs/passport");
 const common_1 = require("@nestjs/common");
 let BooksController = class BooksController {
     constructor(booksService) {
@@ -76,7 +75,6 @@ __decorate([
 ], BooksController.prototype, "remove", null);
 exports.BooksController = BooksController = __decorate([
     (0, common_1.Controller)('books'),
-    (0, common_1.UseGuards)((0, passport_1.AuthGuard)()),
     __metadata("design:paramtypes", [books_service_1.BooksService])
 ], BooksController);
 //# sourceMappingURL=books.controller.js.map

@@ -3,7 +3,7 @@ import { CreateBookDto } from './dto/create-book.dto';
 import { UpdateBookDto } from './dto/update-book.dto';
 import { ScanResponse } from 'nestjs-dynamoose';
 import { Book } from './book.model';
-import { AuthGuard } from '@nestjs/passport';
+// import { AuthGuard } from '@nestjs/passport';
 import {
   Controller,
   Get,
@@ -13,11 +13,11 @@ import {
   Delete,
   Put,
   ParseUUIDPipe,
-  UseGuards,
+  // UseGuards,
 } from '@nestjs/common';
 
 @Controller('books')
-@UseGuards(AuthGuard())
+// @UseGuards(AuthGuard())
 export class BooksController {
   constructor(private readonly booksService: BooksService) {}
 
