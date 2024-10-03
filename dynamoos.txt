@@ -1,0 +1,50 @@
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process
+
+Dynamooseをインストール
+npm i nestjs-dynamoose
+
+ドッカーを使ってDynamoDB Localのコンテナ(仮想化環境)をバックグラウンドで実行
+docker run -d -p 8000:8000 amazon/dynamodb-local
+
+nest new books-api --skip-git
+
+nest g resource books --no-spec
+
+クラスバリデーターとクラストランスフォーマーのインストール
+npm i class-validator class-transformer
+
+npm i uuid
+npm i @types/uuid
+
+npm run start:dev
+
+AWS CLI インストール
+Invoke-WebRequest -Uri https://awscli.amazonaws.com/AWSCLIV2.msi -OutFile AWSCLIV2.msi Start-Process msiexec.exe -ArgumentList '/i AWSCLIV2.msi /quiet' -NoNewWindow -Wait Remove-Item AWSCLIV2.msi
+
+以下を設定する
+aws configure
+        accessKeyId: 'dummy', 
+        secretAccessKey: 'dummy', 
+        region: 'ap-southeast-2'
+
+ブラウザでDB操作
+http://localhost:8001
+
+Git更新
+https://qiita.com/kouz496/items/bbc35abad6ea07524817
+
+AWS SDK のインストール
+npm i @aws-sdk/client-cognito-identity-provider
+
+サインインエクスペリエンス
+ユーザーが任意のユーザー名でサインインすることを許可
+
+パスポートモジュールのインストール
+npm i @nestjs/passport jwks-rsa passport-jwt
+npm i @types/passport-jwt
+
+テスト
+npm run test:e2e
+
+ドッカー起動後実行
+docker compose up -d

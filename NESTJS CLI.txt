@@ -1,0 +1,71 @@
+npm i -g @nestjs/cli
+
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process
+
+nest new nestjs-fleamarket --skip-git
+
+code nestjs-fleamarket
+
+モジュール作成
+nest g module items
+
+コントローラ作成
+nest g controller items --no-spec
+
+nestjs起動
+npm run start:dev
+
+サービス作成
+nest g service items --no-spec
+
+uuid型のインストール
+npm i uuid
+npm i @types/uuid
+
+クラスバリデーターとクラストランスフォーマーのインストール
+npm i class-validator class-transformer
+
+コンテナの立ち上げ
+docker compose up -d
+
+psql実行
+docker exec -it postgres psql -U nestjsuser fleamarket
+
+プリズマのインストール
+npm i prisma
+
+プリズマの初期セットアップ
+npx prisma init
+
+DBマイグレーション実行
+npx prisma migrate dev --name init
+
+プリズマスタジオの起動
+npx prisma studio
+
+プリズマモジュールの作成
+nest g module prisma
+
+プリズマサービスの作成
+nest g service prisma --no-spec
+
+モジュール・コントローラー・一括作成
+authモジュール作成
+nest g resource auth --no-spec
+
+bクリプトのインストール
+npm i bcrypt
+
+bクリプトの型定義をインストール
+npm i @types/bcrypt
+
+パスポートのインストール
+npm i @nestjs/passport
+
+ストラテジーのインストール
+npm i passport-jwt @nestjs/jwt
+
+ストラテジーの型定義をインストール
+npm i @types/passport-jwt 
+
+
